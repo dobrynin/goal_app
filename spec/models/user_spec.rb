@@ -23,10 +23,10 @@ RSpec.describe User, type: :model do
 
   describe "::find_by_credentials" do
     let!(:dave) { User.create!(email: "dave@gmail.com",
-                              password: "password")}
+                              password: "password") }
 
     let!(:miri) { User.create!(email: "miri@yahoo@com",
-                              password: "wrong_password")}
+                              password: "wrong_password") }
 
     it "should return the user if provided valid credentials" do
       expect(User.find_by_credentials(dave.email, dave.password)).to eq(dave)
